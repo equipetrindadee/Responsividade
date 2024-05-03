@@ -1,95 +1,112 @@
 import React from "react";
+import "./alerta.css";
+
 
 export const Alerta = () => {
-
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="Bootstrap Logo" width="30"
-              height="30" class="d-inline-block align-text-top me-2" />
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <span className="navbar-brand">
+            <span className="alpha-text">Alpha</span>
+          </span>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="/dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/listar"><i class="fas fa-list"></i> Listar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/formulario"><i class="fas fa-edit"></i> Formulário</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/visualizar"><i class="fas fa-eye"></i> Visualizar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link-nav" href="/alerta"><i class="fas fa-exclamation-triangle"></i> Alerta</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link dropdown cor-link" data-bs-toggle="dropdown" aria-expanded="false" href=""><i class="fas fa-users"></i> Customers</a>
-                <ul className="dropdown-menu">
-                  <li><button type="button" className="btn btn">Login</button></li>
-                  <li><button type="button" className="btn btn-primary"><a href="/">Sign-up</a></button></li>
-                  <li><hr className="dropdown-divider"></hr></li>
-                </ul>
-              </li>
-            </ul>
+          <div
+            className="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
           </div>
         </div>
       </nav>
 
+      {/* Linha laranja abaixo da navbar */}
+      <div className="orange-line">
+        <h1 className="alert-title">Alertas</h1>
+      </div>
+      <img src="imagem-alerta.png" alt="Imagem Sobrepondo Linha Laranja" className="overlay-image" width={"200px"} />
 
       <div className="container alert-container">
         <div className="row">
-          <div className="col-md-12">
-            <div className="main-alert">
-              <div className="alert-box">
-                <div className="container-fluid mt-5">
-                  <div className="row">
-                    <div className="col-6">
-                      <h3 className="text-center alert-title">Alerta</h3>
-                    </div>
-                    <div className="col-6">
-                      <a href="#" className="btn btn-primary btn-listar">Listar</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="color-box alert1">
-                  <p className="alert-text">A simble primary alert</p>
-                </div>
-              </div>
-              <div class="alert-box">
-                <div class="color-box alert2">
-                  <p class="alert-text">A simple succes alert</p>
-                </div>
-              </div>
-              <div class="alert-box">
-                <div class="color-box alert3">
-                  <p class="alert-text">A simple warning alert</p>
-                </div>
-              </div>
-              <div class="alert-box">
-                <div class="color-box alert4">
-                  <p class="alert-text">A simple danger alert</p>
-                </div>
-              </div>
-              <div class="alert-box">
-                <div class="color-box alert5">
-                  <p class="alert-text">A simple info alert</p>
-                </div>
-              </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert1"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert2"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert3"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert4"></div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert5"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert6"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert7"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert8"></div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert9"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert10"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert11"></div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="alert-box">
+              <div className="color-box alert12"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Alerta
+export default Alerta;

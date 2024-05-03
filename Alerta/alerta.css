@@ -1,0 +1,96 @@
+body{
+    background-color: rgb(255, 255, 255) ;
+   
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+.orange-line {
+    margin-top: 20px;
+    height: 60px; /* Altura da linha laranja */
+    background-color: #fbbc04; /* Cor da linha laranja */
+  }
+
+  .overlay-image {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    z-index: 1;
+  }
+  
+  .alert-title {
+    font-family: 'Pattaya';
+    color: white;
+    padding-top: 5px;
+    margin-top: 45px;
+    margin-left: 40px;
+    
+  }
+
+  .alpha-text{
+    color: #fbbc04;
+    font-family: 'Pattaya';
+  }
+  
+  .alert-container {
+    margin-top: 50px; /* Ajuste o valor conforme necessário */
+  }
+  
+  .alert-box {
+    margin-top: 20px;
+    
+  }
+  
+  .color-box {
+    border-radius: 10px; /* Bordas redondas */
+    padding: 60px; /* Espaçamento interno */
+  }
+  
+  .alert1 {
+    background-color: rgba(255, 0, 0, 0.5); /* Cor da caixa 1 */
+  }
+  
+  .alert2 {
+    background-color: rgba(255, 0, 0, 0.5); /* Cor da caixa 2 */
+  }
+  
+  .alert3 {
+    background-color: rgba(255, 0, 0, 0.5); /* Cor da caixa 3 */
+  }
+  
+  .alert4 {
+    background-color: rgba(255, 0, 0, 0.5); /* Cor da caixa 4 */
+  }
+  
+  .alert5 {
+    background-color: rgba(241, 171, 182, 0.5); /* Cor da caixa 5 */
+  }
+  
+  .alert6 {
+    background-color: rgba(241, 171, 182, 0.5); /* Cor da caixa 6 */
+  }
+  
+  .alert7 {
+    background-color: rgba(241, 171, 182, 0.5); /* Cor da caixa 7 */
+  }
+  
+  .alert8 {
+    background-color: rgba(241, 171, 182, 0.5); /* Cor da caixa 8 */
+  }
+  
+  .alert9 {
+    background-color: rgba(93, 113, 182, 0.6); /* Cor da caixa 9 */
+  }
+  
+  .alert10 {
+    background-color: rgba(93, 113, 182, 0.6); /* Cor da caixa 10 */
+  }
+  
+  .alert11 {
+    background-color: rgba(93, 113, 182, 0.6); /* Cor da caixa 11 */
+  }
+  
+  .alert12 {
+    background-color: rgba(93, 113, 182, 0.6); /* Cor da caixa 12 */
+  }
+  
