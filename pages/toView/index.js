@@ -145,7 +145,7 @@ export const View = () => {
 
                                     {/* MODAL */}
 
-                                    <div className="modal fade" id={`staticBackdrop-${user.id}`} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby={`staticBackdropLabel-${user.id}`} aria-hidden="true">
+                                    <div className="modal modal-view fade" id={`staticBackdrop-${user.id}`} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby={`staticBackdropLabel-${user.id}`} aria-hidden="true">
                                         <div className="modal-dialog">
                                             <div className="modal-content modal-contentView">
                                                 <div className="modal-header">
@@ -153,37 +153,37 @@ export const View = () => {
                                                     {/* <button type="button"data-bs-dismiss="modal" aria-label="Close"><i className="bi bi-x"></i></button> */}
                                                 </div>
                                                 <div className="modal-body">
-                                                    <ul >
+                                                    <ul className='modalInfo'>
                                                         <li>
-                                                            <h3>id:</h3>
-                                                            <p>{user.id}</p>
+                                                            <h3 className='id-modal-h3'>id:</h3>
+                                                            <p  className='id-modal-visualizar'>{user.id}</p>
                                                         </li>
                                                         <li>
-                                                            <h3>Nome:</h3>
+                                                            <h3 className='nome-modal-h3'>Nome:</h3>
                                                             <p className='nome-modal-visualizar'>{user.name}</p>
                                                         </li>
                                                         <li>
-                                                            <h3>CPF:</h3>
+                                                            <h3 className='cpf-modal-h3'>CPF:</h3>
                                                             <p className='cpf-modal-visualizar'>{user.cpf}</p>
                                                         </li>
                                                         <li>
-                                                            <h3>Email:</h3>
+                                                            <h3 className='email-modal-h3'>Email:</h3>
                                                             <p className='email-modal-visualizar'>{user.email}</p>
                                                         </li>
                                                         <li>
-                                                            <h3>Estado:</h3>
+                                                            <h3 className='estado-modal-h3'>Estado:</h3>
                                                             <p className='estado-modal-visualizar'>{user.estado}</p>
                                                         </li>
                                                         <li>
-                                                            <h3>Cidade:</h3>
+                                                            <h3 className='cidade-modal-h3'>Cidade:</h3>
                                                             <p className='cidade-modal-visualizar'>{user.cidade}</p>
                                                         </li>
                                                         <li>
-                                                            <h3>Rua:</h3>
+                                                            <h3 className='rua-modal-h3'>Rua:</h3>
                                                             <p className='rua-modal-visualizar'>{user.rua}</p>
                                                         </li>
                                                         <li>
-                                                            <h3>CEP:</h3>
+                                                            <h3 className='cep-modal-h3'>CEP:</h3>
                                                             <p className='cep-modal-visualizar'>{user.cep}</p>
                                                         </li>
                                                     </ul>

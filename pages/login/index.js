@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import api from "../../config/configApi.js"
 import { useNavigate } from 'react-router-dom'
-
+import { Context } from "../../Context/AuthContext.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../login/login.css"
 
 
 export const Login = () => {
+    const { authenticated, singIn } = useContext(Context)
+    console.log("Usarui está" + authenticated)
 
     const navigate = useNavigate()
     const [user, setUser] = useState({
@@ -22,7 +24,7 @@ export const Login = () => {
     })
 
 
-  
+
 
     const [loading, setLoading] = useState(false);
     const valueInput = e => setUser({ ...user, [e.target.name]: e.target.value })
@@ -35,14 +37,15 @@ export const Login = () => {
 
         try {
             await api.post('/user-login', user, { headers })
-            .then((response)=>{
-                setStatus({
-                 type: 'success', 
-                 mensagem: response.data.mensagem
-                });
-           
-                navigate("/dashboard");
-            })
+                .then((response) => {
+                    setStatus({
+                        type: 'success',
+                        mensagem: response.data.mensagem
+                    });
+                    localStorage.setItem('token', JSON.stringify(response.data.token))
+                    singIn(true)
+                    navigate("/dashboard");
+                })
         } catch (error) {
             // Tratar erros de login
             setStatus({ type: 'error', mensagem: error.response.data.mensagem || "Erro ao fazer login" });
@@ -50,7 +53,7 @@ export const Login = () => {
             setLoading(false);
         }
     };
-    
+
 
 
     return (
@@ -79,12 +82,13 @@ export const Login = () => {
                             {status.type === 'error' ? <p className="login-manssage">{status.mensagem}</p> : ""}
                             <div className="more-information">
                                 <a className="link-info link-dark" href="/mudar-senha">Esqueci minha senha </a>
+                                <br/>
                                 <a className="link-info link-dark" href="/criarConta">Cadastre-se</a>
                             </div>
                             <div className="nav-icons">
                                 <div className="icon-item">
-                                <i className="bx bxl-google"></i>
-                                
+                                    <i className="bx bxl-google"></i>
+
                                 </div>
                                 <div className="icon-item i2">
                                     <i class='bx bxl-github'></i>

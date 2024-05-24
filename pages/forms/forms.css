@@ -104,13 +104,20 @@ color: #000 !important;
   margin-right: 0px !important;
 }
 
+.btn-close{
+  background: #ffffff var(--bs-btn-close-bg) center / 1em auto no-repeat !important;
+  --bs-btn-close-white-filter:  grayscale(100%) brightness(200%) !important; 
+}
+
 .headerForm{
   display: flex;
   text-align: center !important;
   margin-left: auto !important;
   height: 5vh;
 }
-
+.dropdown-menu{
+  background-color: #fff;
+}
 .dropdown-menuForm{
   margin-left: auto !important;
 }
@@ -172,17 +179,19 @@ color: #000 !important;
 
 .btn-cadastrar {
   width: 268px;
-  height: 61px;
+  height: 45px;
   margin-top: 1%;
   font-family: var(--font-writing-info) !important;
 
 }
-
+.btn-cadastrar-oficial {
+  
+}
 .btn-cadastrar-mobile-footer {
   display: none ;
   width: 80%;
   margin-top: 15px !important;
-  height: 61px;
+  height: 50px;
   font-family: var(--font-writing-info) !important;
   background-color: #000 !important;
   margin-left: auto !important;
@@ -192,10 +201,11 @@ color: #000 !important;
 .btn-cadastrar-mobile-footer button{
   color: var(--color-card-info) !important;
   font-weight: bolder !important;
-  margin-top: 15px !important;
+  margin-top: 5px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   border-radius: 0px !important; 
+  padding-bottom: 40px;
 }
 
 .container {

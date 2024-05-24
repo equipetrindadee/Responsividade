@@ -1,88 +1,93 @@
-import React from "react"
+import React, { useContext } from "react"
+import { useNavigate } from 'react-router-dom'
 import '../Dashboard/dashboard.css'
+import { Context } from "../../Context/AuthContext"
 export const Dashboard = () => {
+
+    const { authenticated, handleLogout } = useContext(Context)
+    console.log("Natela de Dashboard o usuario está" + authenticated)
+
+    const token = localStorage.getItem('token')
+    const navigate = useNavigate()
     return (
         <body>
             <header>
-            <nav class="navbar navbarDashboard">
-                <div class="container-sm">
+                <nav class="navbar navbarDashboard">
+                    <div class="container-sm">
 
-                    <div class="parent-menu">
-                        <div class="div1-menu"> <h1 className="logoDashboard">Alpha</h1></div>
-                        <div class="div2-menu">  <button class="btn
-                    perfil-btn-mobile" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> <i className="bi bi-person-circle"></i></button>
+                        <div class="parent-menu">
+                            <div class="div1-menu"> <h1 className="logoDashboard">Alpha</h1></div>
+                            <div class="div2-menu">  <button class="btn
+                                perfil-btn-mobile" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> <i className="bi bi-person-circle"></i></button>
+                            </div>
                         </div>
-                    </div>
 
 
+                        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div className="offcanvas-header">
+                                <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div className="offcanvas-body offcanvas-body-view">
+                                <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li className="nav-item">
+                                        <a className="nav-link active" aria-current="page" href="/dashboard">
+                                            Dashboard
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/listar">
+                                            Listar
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/formulario">
+                                            Formulario
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/visualizar">
+                                            Visualizar
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/alerta">
+                                            Alerta
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Perfil
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="/">Logout</a></li>
+                                            <li><a class="dropdown-item" href="#">Meu perfil</a></li>
 
+                                        </ul>
+                                    </li>
 
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="offcanvas-header">
-
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="offcanvas-body">
-                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <div class="dropdown">
+                            <button className="btn perfil-btn perfil-btnDash" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle perfil"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="/formulario">Cadastrar</a></li>
+                            </ul>
+                        </div>
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/dashboard">
-                                        Dashboard
+                                    <a className="nav-link" href="#">
+                                        <i className="fas fa-user"></i>
                                     </a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/listar">
-                                        Listar
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/formulario">
-                                        Formulario
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/visualizar">
-                                        Visualizar
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/alerta">
-                                        Alerta
-                                    </a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Perfil
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/">Logout</a></li>
-                                        <li><a class="dropdown-item" href="#">Meu perfil</a></li>
-
-                                    </ul>
-                                </li>
-
                             </ul>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <button className="btn perfil-btn perfil-btnDash" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-circle perfil"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Perfil</a></li>
-                            <li><a class="dropdown-item" href="/formulario">Cadastrar</a></li>
-                        </ul>
-                    </div>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    <i className="fas fa-user"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+                </nav>
             </header>
             <div className="container-dashboard">
                 <div className="info-dashboard">
@@ -157,7 +162,7 @@ export const Dashboard = () => {
                                 <a href="/">
                                     <li className="logOut">
                                         <span class="icon iconListar"><i class="bi bi-x-circle"></i></span>
-                                        <span class="text textListar">logOut</span>
+                                        <span class="text textListar"><button onClick={handleLogout}>Logout</button></span>
                                     </li>
                                 </a>
                             </ul>

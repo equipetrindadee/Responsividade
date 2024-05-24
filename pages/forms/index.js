@@ -125,53 +125,52 @@ export const Forms = () => {
               <i className="bi bi-person-circle"></i>
             </button>
 
-            <div className="offcanvas offcanvas-end offcanvas-forms Form text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+            {/* parte offcanvas */}
+            <div className="offcanvas offcanvas-top offcanvas-forms Form text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
               aria-labelledby="offcanvasDarkNavbarLabel">
-              <div className="offcanvas-header">
-                <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
-                <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                  aria-label="Close"></button>
-              </div>
-              <div className="offcanvas-body offcanvas-body-forms">
-                <ul className="nav justify-content-end flex-grow-1 pe-3 list">
+               <div className="offcanvas-header">
+                                <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div className="offcanvas-body offcanvas-body-view">
+                                <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li className="nav-item">
+                                        <a className="nav-link active" aria-current="page" href="/dashboard">
+                                            Dashboard
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/listar">
+                                            Listar
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/formulario">
+                                            Formulario
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/visualizar">
+                                            Visualizar
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/alerta">
+                                            Alerta
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Perfil
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="/">Logout</a></li>
+                                            <li><a class="dropdown-item" href="#">Meu perfil</a></li>
 
-                  <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/dashboard">
-                      Dashboard
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/listar">
-                      Listar
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/formulario">
-                      Formulario
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/visualizar">
-                      Visualizar
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/alerta">
-                      Alerta
-                    </a>
-                  </li>
-                  <li class="nav-item dropdown offcanvas-dropdown-forms">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Perfil
-                    </a>
-                    <ul class="dropdown-menu offcanvas-dropdown-forms">
-                      <li><a class="dropdown-item" href="/">Logout</a></li>
-                      <li><a class="dropdown-item" href="#">Meu perfil</a></li>
+                                        </ul>
+                                    </li>
 
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+                                </ul>
+                            </div>
             </div>
 
             {/* <!-- Fim Navbar Celular --> */}
@@ -202,7 +201,6 @@ export const Forms = () => {
           <div className="content-layout-forms">
             <h2>  Cadastrar</h2>
             {/* <img src="../img/img_centro.svg" alt="" /> */}
-            {status.type === 'error' ? <p className='mensagemError'>{status.mensagem}</p> : ""}
             <button type="button" class="btn btn-cadastrar " onClick={postSubmit}>CADASTRAR</button>
 
           </div>
@@ -264,8 +262,10 @@ export const Forms = () => {
               </div>
             </div>
           </form>
+          <br/>
+          {status.type === 'error' ? <p className='mensagemError'>{status.mensagem}</p> : ""}
           <div className="btn-cadastrar-mobile-footer ">
-            <button type="button" class="btn btn-cadastrar-m " onClick={postSubmit}>CADASTRAR</button>
+            <button type="button" class="btn btn-cadastrar-oficial " onClick={postSubmit}>CADASTRAR</button>
           </div>
         </div>
     </div>

@@ -58,6 +58,7 @@
 
 .offcanvas-body {
   width: 450px;
+
   background-color: rgb(255, 255, 255) !important;
 }
 
@@ -69,8 +70,9 @@
 .offcanvas-header{
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255) !important;
-  width: 450px;
+  width: 100%;
 }
+
 
 .nav-link {
   font-size: 15px !important;
@@ -86,7 +88,7 @@
 .dropdown-item {
   font-size: 15px !important;
 }
-
+/* offcanvas principal */
 .offcanvas-big {
   width: 100% !important;
 }
@@ -107,7 +109,6 @@
   margin: 10px;
 }
 
-
 .users {
   margin: 10px 0px 0px 15px;
   display: flex !important;
@@ -117,8 +118,6 @@
 .users p {
   margin-top: 13px !important;
 }
-
-
 
 .content-layout {
   /* background-color: beige; */
@@ -243,6 +242,7 @@
 
 .modal-contentView {
   background-color: black !important;
+  position: relative;
 }
 
 .modal-header {
@@ -266,8 +266,7 @@
   color: var(--color-modal-text);
   font-size: 16px;
   font-weight: bolder;
-  position: relative;
-  left: -170px !important;
+
 }
 
 .modal-body p {
@@ -277,44 +276,28 @@
   font-weight: 200;
   letter-spacing: 1px;
   position: relative;
-  left: -170px !important;
+}
+
+.modalInfo{
+  width: 60% !important;
+  text-align: start;
+}
+
+.modalInfo li{
+  margin-left: auto !important;
+}
+
+.modalInfo h3{
+  margin-left: auto !important;
+}
+
+.modalInfo p{
+  margin-left: auto !important;
 }
 
 /* alteração dia 22/05 */
-.modal-body .nome-modal-visualizar {
-  position: relative;
-  left: -175px !important;
-}
 
-.modal-body .cpf-modal-visualizar {
-  position: relative;
-  left: -150px !important;
-}
-
-.modal-body .email-modal-visualizar {
-  position: relative;
-  left: -130px !important;
-}
-
-.modal-body .estado-modal-visualizar {
-  position: relative;
-  left: -190px !important;
-}
-
-.modal-body .cidade-modal-visualizar {
-  position: relative;
-  left: -145px !important;
-}
-
-.modal-body .rua-modal-visualizar {
-  position: relative;
-  left: -100px !important;
-}
-
-.modal-body .cep-modal-visualizar {
-  position: relative;
-  left: -165px !important;
-}
+/* parte h3 */
 
 /* fim da alteração */
 
@@ -457,6 +440,16 @@
     width: 300px !important;
     height: 215px !important;
   }
+  .card-info{
+    position: relative;
+
+  }
+  .imgView{
+    position: relative;
+    top: 10px;
+    /* width: 250px !important; */
+
+  }
 
 }
 
@@ -495,6 +488,20 @@
 
 
   }
+  .card-info{
+    position: relative;
+
+  }
+  .imgView{
+    position: relative;
+    top: 10px;
+    /* width: 250px !important; */
+
+  }
+  .offcanvas-body{
+    width: 100%;
+    background-color: #fff;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -502,6 +509,9 @@
     margin-bottom: -100px;
     margin-left: -5px;
     text-align: center;
+  }
+  .content-layout {
+    flex-direction: column;
   }
 
   .content-layout img {
@@ -525,6 +535,22 @@
     /* Remove o preenchimento padrão da lista */
 
 
+  }
+  .offcanvas-body{
+    /* position: relative; */
+    /* left: 100%; */
+    /* padding: 10px; */
+    /* margin-top: 10%; */
+   margin: 0 auto!important;
+    border: none !important;
+  }
+  .offcanvas-backdrop{
+    background-color: transparent !important;
+  }
+  .imgView{
+    position: relative;
+    top: 10px;
+    /* width: 250px !important; */
   }
 
 }

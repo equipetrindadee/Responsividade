@@ -41,36 +41,36 @@ export const Listar = () => {
     const [deletingUserId, setDeletingUserId] = useState(null);
 
     const handleCEPChange = async (e) => {
-    const cep = e.target.value.replace(/\D/g, ''); // Remover caracteres não numéricos do CEP
+        const cep = e.target.value.replace(/\D/g, ''); // Remover caracteres não numéricos do CEP
 
-    setEditedData(prevState => ({
-        ...prevState,
-        cep: cep
-    }));
-
-    if (cep.length === 8) { // Verificar se o CEP possui 8 dígitos
-        try {
-            const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`); // Requisição GET ao ViaCEP
-            const { uf, localidade, logradouro } = response.data; // Extrair dados de endereço da resposta
-            setEditedData(prevState => ({
-                ...prevState,
-                estado: uf,
-                cidade: localidade,
-                rua: logradouro
-            }));
-        } catch (error) {
-            console.error('Erro ao buscar informações do CEP:', error);
-        }
-    } else {
-        // Limpar os campos de estado, cidade e rua se o CEP for inválido
         setEditedData(prevState => ({
             ...prevState,
-            estado: '',
-            cidade: '',
-            rua: ''
+            cep: cep
         }));
-    }
-};
+
+        if (cep.length === 8) { // Verificar se o CEP possui 8 dígitos
+            try {
+                const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`); // Requisição GET ao ViaCEP
+                const { uf, localidade, logradouro } = response.data; // Extrair dados de endereço da resposta
+                setEditedData(prevState => ({
+                    ...prevState,
+                    estado: uf,
+                    cidade: localidade,
+                    rua: logradouro
+                }));
+            } catch (error) {
+                console.error('Erro ao buscar informações do CEP:', error);
+            }
+        } else {
+            // Limpar os campos de estado, cidade e rua se o CEP for inválido
+            setEditedData(prevState => ({
+                ...prevState,
+                estado: '',
+                cidade: '',
+                rua: ''
+            }));
+        }
+    };
 
 
 
@@ -279,7 +279,7 @@ export const Listar = () => {
                             </ul>
                         </div>
                     </div> */}
-                    <div class="offcanvas offcanvas-end offcanvas-listar" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas offcanvas-top offcanvas-listar" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
 
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -482,14 +482,14 @@ export const Listar = () => {
                                                                                         <div className="form-floating formCep mb-3">
                                                                                             <input
                                                                                                 type="text"
-                                                                                                className="form-control form-controlForm"
+                                                                                                className="form-control "
                                                                                                 placeholder="CEP"
                                                                                                 name="cep"
                                                                                                 value={editedData.cep}
                                                                                                 onChange={handleCEPChange}
                                                                                                 required
                                                                                             />
-
+                                                                                            <label htmlFor="name">CEP:</label>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className="col colState">

@@ -45,7 +45,7 @@ export const Alert = () => {
             </div>
 
             {/* Offcanvas */}
-            <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div className="offcanvas offcanvas-top" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
               <div className="offcanvas-header">
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
